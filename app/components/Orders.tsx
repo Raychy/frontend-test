@@ -4,19 +4,23 @@ import React, { FC, useState } from "react";
 const OrdersComponent: FC<GlobalProps> = ({ orders }) => {
   const [selected, setSelected] = useState(new Set());
   const allChecked = selected.size === orders.length;
-  //This funtion is used to checkbox order records
-  const onCheckboxClick = React.useCallback(() => {
-    setSelected((select) => {
-      const result = new Set(select);
 
-      if (select) {
-        orders.forEach(function (order) {
-          if (!result.delete(order.id)) result.add(order.id);
-        });
-      }
-      return result;
-    });
-  }, [orders]);
+  //This funtion is used to checkbox order records
+  const onCheckboxClick = React.useCallback(
+    () => {
+      setSelected((select) => {
+        const result = new Set(select);
+        if (select) {
+          orders.forEach(function (order) {
+            if (!result.delete(order.id)) result.add(order.id);
+          });
+        }
+        return result;
+      });
+    },
+    [orders]
+  );
+
   return (
     <>
       <table className="w-full m-auto">
@@ -25,8 +29,8 @@ const OrdersComponent: FC<GlobalProps> = ({ orders }) => {
             <th className=" px-2">
               <input
                 type="checkbox"
-                checked={allChecked}
-                onClick={onCheckboxClick}
+                name="select"
+                onChange={onCheckboxClick}
                 defaultValue={selected.size}
               />
             </th>
@@ -52,10 +56,10 @@ const OrdersComponent: FC<GlobalProps> = ({ orders }) => {
               <td className=" px-2">
                 <input
                   type="checkbox"
-                  name="allSelect"
-                  defaultValue={selected.size}
-                  onClick={() => setSelected(new Set([...i.id]))}
+                  name='select'
                   checked={allChecked}
+                  defaultValue={selected.size}
+                  onChange={onCheckboxClick}
                 />
               </td>
               <td className=" px-2">{i.id} </td>

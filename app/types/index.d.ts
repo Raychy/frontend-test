@@ -9,6 +9,7 @@ type Order = {
     shipping: String,
     source: String,
     orderType: String,
+    isChecked: boolean,
 }
 type GlobalProps = {
     orders: Order[];

@@ -10,6 +10,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'Australian Post Api',
         source: 'shopifyBU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '2',
@@ -22,6 +23,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '3',
@@ -34,6 +36,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '4',
@@ -46,6 +49,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '5',
@@ -58,6 +62,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '6',
@@ -70,6 +75,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '7',
@@ -82,6 +88,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '8',
@@ -94,6 +101,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '9',
@@ -106,6 +114,7 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
     {
         id: '10',
@@ -118,5 +127,6 @@ export const ordersList: GlobalProps['orders'] = [
         shipping: 'shopifyAU',
         source: 'shopifyAU',
         orderType: 'customer',
+        isChecked: false
     },
 ]
