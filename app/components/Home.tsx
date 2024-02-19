@@ -2,7 +2,6 @@
 import React, { FC, useState } from "react";
 import OrdersComponent from "./Orders";
 import { ordersList } from "../model/orders";
-import Pagination from "./Pagination";
 
 const HomeC: FC = () => {
   const [orders, setOrders] = useState<GlobalProps["orders"]>(ordersList ?? []);
@@ -153,36 +152,7 @@ const HomeC: FC = () => {
         </div>
       </section>
       {/* THIS SHOWS THE ORDER RECORDS */}
-      <section className=" bg-white shadow-md px-6 py-8 rounded-lg mt-7">
-        <div className="w-full md:grid gap-10 grid-cols-4 justify-between items-center bg-white py-5 ">
-          <div className="mb-4 md:mb-0">
-            <h1 className="font-bold text-xl">Project Summary</h1>
-          </div>
-          <div className="mb-4 md:mb-0">
-            <div className=" flex items-center gap-2">
-              <button>Show</button>
-              <select
-                name=""
-                id=""
-                className="w-full border border-gray-200 px-2 py-2 bg-white uppercase text-xs"
-              >
-                <option value="">All columns</option>
-                <option value="customer">Customer</option>
-                <option value="shipping">Shipping</option>
-              </select>
-            </div>
-          </div>
-          <div className="mb-4 md:mb-0">
-            <button className=" bg-blue-700 text-white rounded-lg px-10 py-3 uppercase text-sm">
-              dispatch selected
-            </button>
-          </div>
-          <Pagination />
-        </div>
-        <section className="overflow-x-scroll lg:overflow-x-hidden">
-          <OrdersComponent orders={orders} />
-        </section>
-      </section>
+      <OrdersComponent orders={orders} />
     </div>
   );
 };

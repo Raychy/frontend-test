@@ -1,10 +1,15 @@
 import React from "react";
 
-const Pagination = () => {
+interface PaginationProps {
+  range: number[];
+  setPage: any;
+  page: number;
+}
+const Pagination = ({ range, setPage, page }: PaginationProps) => {
   return (
     <div>
       <div className="flex gap-5">
-        <button>
+        <button >
           <svg
             className="text-gray-400 w-6 h-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -14,12 +19,19 @@ const Pagination = () => {
             <path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"></path>
           </svg>
         </button>
-        <button className="text-blue-700">1</button>
-        <button className="text-blue-700">2</button>
-        <button className="text-blue-700">3</button>
-        <button className="text-blue-700">4</button>
-        ...
-        <button className="text-blue-700">10</button>
+        {range.map((el, index) => (
+          <button
+            key={index}
+            className={`py-1 px-3 rounded-md ${
+              page === el
+                ? "bg-blue-600 text-white"
+                : "bg-skale-200 text-blue-600"
+            }`}
+            onClick={() => setPage(el)}
+          >
+            {el}
+          </button>
+        ))}
         <button>
           <svg
             className="text-gray-400 w-6 h-6"
